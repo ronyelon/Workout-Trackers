@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 
 //const v1Router = require("./v1/routes");
 //connecting v1 workout router
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 3000;
 
 //app.use("/api/v1", v1Router);
 //connecting v1 workout router
+app.use(bodyParser.json());
 app.use("/api/v1/workouts", v1WorkoutRouter);
 
 app.listen(PORT, () => {
